@@ -96,7 +96,13 @@ function TriviaView() {
                             })}
                         </ol>
                     </div>
-                    {!isSubmitted ? <input type='submit' value='Submit' /> : <button onClick={(e) => next(e)}>Next</button>}
+                    {!isSubmitted ? (
+                        <button type='submit' disabled={selectedAnswer === null ? true : false}>
+                            Submit
+                        </button>
+                    ) : (
+                        <button onClick={(e) => next(e)}>Next</button>
+                    )}
                 </form>
             ) : (
                 <div>Loading...</div>
