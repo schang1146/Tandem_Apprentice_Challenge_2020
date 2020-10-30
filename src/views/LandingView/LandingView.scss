@@ -27,8 +27,6 @@
                 font-weight: 700;
                 margin-bottom: 4rem;
             }
-            .landing-title {
-            }
         }
 
         .landing-bot {
@@ -37,6 +35,10 @@
                 color: #ffffff;
                 padding: 20px 50px;
                 text-decoration: none;
+
+                &:hover {
+                    background-color: colors.$btn1-hover-color;
+                }
             }
         }
     }
