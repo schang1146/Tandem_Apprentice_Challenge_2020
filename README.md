@@ -36,3 +36,4 @@ Hosted by [Netlify](https://www.netlify.com/) at placeholder-e39aw1.netlify.app
 -   add share feature to post result to social media accounts
 -   add more styling to make pages less bland
 -   make pages responsive to support mobile play
+-   add hidden easter eggs because who doesn't love some easter eggs? :)
