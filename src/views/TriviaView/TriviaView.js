@@ -9,7 +9,7 @@ import './TriviaView.scss';
 import data from '../../api/Apprentice_TandemFor400_Data.json';
 
 // function to generate a set of 10 random problems without duplicates
-function generateProblems() {
+const generateProblems = () => {
     let added = new Set();
     let problems = [];
 
@@ -24,22 +24,22 @@ function generateProblems() {
     }
 
     return problems;
-}
+};
 
 // function to get a random integer from 0 -> data.length (exclusive)
-function getRandomInt(max) {
+const getRandomInt = (max) => {
     return Math.floor(Math.random() * max);
-}
+};
 
 // function to shuffle a given array
 // uses durstenfeld's shuffling algorithm
-function shuffle(array) {
+const shuffle = (array) => {
     for (let i = 0; i < array.length - 1; i++) {
         const j = Math.floor(Math.random() * array.length);
         [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
-}
+};
 
 function TriviaView() {
     // componentdidmount - generate questions
@@ -75,9 +75,6 @@ function TriviaView() {
 
         if (problems[questionId].answers.indexOf(problems[questionId].correct) === selected) {
             setScore(score + 1);
-            console.log('correct');
-        } else {
-            console.log('incorrect');
         }
 
         setSubmitted(true);
@@ -126,4 +123,4 @@ function TriviaView() {
     );
 }
 
-export default TriviaView;
+export { generateProblems, getRandomInt, shuffle, TriviaView as default };
