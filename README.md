@@ -16,19 +16,32 @@ Hosted by [Netlify](https://www.netlify.com/) at placeholder-e39aw1.netlify.app
 
 ## Screenshots
 
-## Installation and Setup
+## Installation / Setup / Testing
 
 ### Requirements
 
 -   git
--   yarn
+-   node
+-   yarn 1.19.1+
 
 ### Local Project Setup
 
 1. Clone repository
+
+`git clone https://github.com/schang1146/Tandem_Apprentice_Challenge_2020.git`
+
 2. Navigate to cloned repository
 3. Install dependencies
+
+`yarn`
+
 4. Run local server
+
+`yarn start` -> http://localhost:3000/
+
+### Testing
+
+`yarn test`
 
 ## Roadmap
 
