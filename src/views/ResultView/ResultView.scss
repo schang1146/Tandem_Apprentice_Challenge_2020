@@ -1,0 +1,52 @@
+@use '../../assets/colors';
+
+.result-wrapper {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, colors.$bg-color3 80%, #ffffff 20%);
+
+    color: colors.$color5;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    .result-score {
+        margin-top: 25vh;
+    }
+
+    .result-title {
+        margin-top: 4rem;
+    }
+
+    .btn-retry {
+        background-color: colors.$color3;
+        color: #ffffff;
+        padding: 2rem 5rem;
+        text-decoration: none;
+        margin-top: 3rem;
+
+        box-shadow: inset 0 0 0 0 darken(colors.$color3, 5%);
+
+        -webkit-transition: ease-out 0.2s;
+        -moz-transition: ease-out 0.2s;
+        transition: ease-out 0.2s;
+
+        &:hover {
+            box-shadow: inset 150px 100px 0 0 darken(colors.$color3, 5%);
+        }
+    }
+
+    .btn-home {
+        background-color: colors.$color3;
+        color: #ffffff;
+        padding: 2rem 5rem;
+        text-decoration: none;
+        margin-top: 1rem;
+
+        &:hover {
+            background-color: darken(colors.$color3, 5%);
+        }
+    }
+}

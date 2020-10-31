@@ -3,7 +3,7 @@
 .trivia-wrapper {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(to bottom, colors.$bg-color3 80%, #ffffff 20%);
+    background: linear-gradient(to bottom, colors.$bg-color2 80%, #ffffff 20%);
 
     color: colors.$font-color-sm;
 
@@ -60,7 +60,7 @@
         }
 
         .btn {
-            margin-top: 3rem;
+            margin-top: 1rem;
             border: 0px;
             color: #ffffff;
         }
