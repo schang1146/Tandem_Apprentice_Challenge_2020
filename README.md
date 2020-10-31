@@ -10,6 +10,9 @@ Hosted by [Netlify](https://www.netlify.com/) at placeholder-e39aw1.netlify.app
 
 1. [Screenshots](#Screenshots)
 2. [Installation and Setup](#Installation_and_Setup)
+    1. [Requirements](#Requirements)
+    2. [Local Project Setup](#Local_Project_Setup)
+3. [Roadmap](#Roadmap)
 
 ## Screenshots
 
@@ -29,5 +32,5 @@ Hosted by [Netlify](https://www.netlify.com/) at placeholder-e39aw1.netlify.app
 
 ## Roadmap
 
--   add history of personal progression
--   add share features to post to social media accounts
+-   add history of personal progression (store in cookie or localStorage)
+-   add share feature to post result to social media accounts
