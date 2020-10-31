@@ -2,6 +2,9 @@
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router';
 
+// import styling
+import './TriviaView.scss';
+
 // import trivia database
 import data from '../../api/Apprentice_TandemFor400_Data.json';
 
@@ -11,11 +14,13 @@ function generateProblems() {
     let problems = [];
 
     while (problems.length !== 10) {
-        const id = getRandomInt(data.length);
-        const answers = shuffle(data[id].incorrect.concat([data[id].correct]));
-        data[id]['answers'] = answers;
-        added.add(id);
-        problems.push(data[id]);
+        let id = getRandomInt(data.length);
+        if (!added.has(id)) {
+            const answers = shuffle(data[id].incorrect.concat([data[id].correct]));
+            data[id]['answers'] = answers;
+            added.add(id);
+            problems.push(data[id]);
+        }
     }
 
     return problems;
@@ -45,7 +50,7 @@ function TriviaView() {
     }, []);
     const [score, setScore] = useState(0);
     const [questionId, setQuestionId] = useState(0);
-    const [selectedAnswer, setSelectedAnswer] = useState(null);
+    const [selected, setSelected] = useState(null);
     const [isSubmitted, setSubmitted] = useState(false);
 
     const history = useHistory();
@@ -62,13 +67,13 @@ function TriviaView() {
         }
 
         setSubmitted(false);
-        setSelectedAnswer(null);
+        setSelected(null);
     };
 
     const submit = (e) => {
         e.preventDefault();
 
-        if (problems[questionId].answers.indexOf(problems[questionId].correct) === selectedAnswer) {
+        if (problems[questionId].answers.indexOf(problems[questionId].correct) === selected) {
             setScore(score + 1);
             console.log('correct');
         } else {
@@ -89,19 +94,29 @@ function TriviaView() {
                         <ol type='A'>
                             {problems[questionId].answers.map((answer, index) => {
                                 return (
-                                    <li key={index} onClick={() => setSelectedAnswer(index)}>
-                                        {answer}
+                                    <li
+                                        className={`trivia-option ${!isSubmitted && selected === index ? 'selected' : ''} ${isSubmitted && problems[questionId].answers.indexOf(problems[questionId].correct) === index ? 'correct' : ''} ${isSubmitted && index === selected && problems[questionId].answers.indexOf(problems[questionId].correct) !== selected ? 'incorrect' : ''}`}
+                                        key={index}
+                                        onClick={() => {
+                                            if (!isSubmitted) {
+                                                setSelected(index);
+                                            }
+                                        }}
+                                    >
+                                        {index + 1}. {answer}
                                     </li>
                                 );
                             })}
                         </ol>
                     </div>
                     {!isSubmitted ? (
-                        <button type='submit' disabled={selectedAnswer === null ? true : false}>
+                        <button className='btn btn-submit' type='submit' disabled={selected === null ? true : false}>
                             Submit
                         </button>
                     ) : (
-                        <button onClick={(e) => next(e)}>Next</button>
+                        <button className='btn btn-next' onClick={(e) => next(e)}>
+                            Next
+                        </button>
                     )}
                 </form>
             ) : (

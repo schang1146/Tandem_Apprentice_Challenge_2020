@@ -3,7 +3,7 @@ import { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // import styling
-import './App.css';
+import './App.scss';
 
 // import views
 const LandingView = lazy(() => import('../../views/LandingView/LandingView'));
