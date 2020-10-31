@@ -9,9 +9,9 @@ Hosted by [Netlify](https://www.netlify.com/) at placeholder-e39aw1.netlify.app
 ## Table of Contents
 
 1. [Screenshots](#Screenshots)
-2. [Installation and Setup](#Installation_and_Setup)
+2. [Installation and Setup](#Installation%20and%20Setup)
     1. [Requirements](#Requirements)
-    2. [Local Project Setup](#Local_Project_Setup)
+    2. [Local Project Setup](#Local%20Project%20Setup)
 3. [Roadmap](#Roadmap)
 
 ## Screenshots
