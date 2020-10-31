@@ -14,11 +14,13 @@ function generateProblems() {
     let problems = [];
 
     while (problems.length !== 10) {
-        const id = getRandomInt(data.length);
-        const answers = shuffle(data[id].incorrect.concat([data[id].correct]));
-        data[id]['answers'] = answers;
-        added.add(id);
-        problems.push(data[id]);
+        let id = getRandomInt(data.length);
+        if (!added.has(id)) {
+            const answers = shuffle(data[id].incorrect.concat([data[id].correct]));
+            data[id]['answers'] = answers;
+            added.add(id);
+            problems.push(data[id]);
+        }
     }
 
     return problems;
