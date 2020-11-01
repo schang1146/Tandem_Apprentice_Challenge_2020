@@ -1,4 +1,4 @@
-# [Tandem Apprentice Challenge 2020](triviaintandem.netlify.app)
+# [Tandem Apprentice Challenge 2020](https://triviaintandem.netlify.app/)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/cc45894e-883f-49e9-908e-b481c1972d96/deploy-status)](https://app.netlify.com/sites/triviaintandem/deploys)
 
