@@ -20,8 +20,8 @@ Deployed by [Netlify](https://www.netlify.com/)
 ## Screenshots
 
 ![LandingView](https://raw.githubusercontent.com/schang1146/Tandem_Apprentice_Challenge_2020/main/src/assets/screenshots/LandingView.PNG)  
-![TriviaView](./src/assets/TriviaView.PNG)  
-![ResultView](./src/assets/ResultView.PNG)
+![TriviaView](https://raw.githubusercontent.com/schang1146/Tandem_Apprentice_Challenge_2020/main/src/assets/screenshots/TriviaView.PNG)  
+![ResultView](https://raw.githubusercontent.com/schang1146/Tandem_Apprentice_Challenge_2020/main/src/assets/screenshots/ResultView.PNG)
 
 ## Development Setup
 
