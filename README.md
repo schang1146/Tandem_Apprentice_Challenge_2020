@@ -4,16 +4,17 @@
 
 Trivia game implemented with [React](https://reactjs.org/).
 
-Tandem Code Challenge 2020 by [Sammy Chang](https://github.com/schang1146)
-
+Tandem Code Challenge 2020 by [Sammy Chang](https://github.com/schang1146)  
 Deployed by [Netlify](https://www.netlify.com/) at [triviaintandem.netlify.app](triviaintandem.netlify.app)
 
 ## Table of Contents
 
 1. [Screenshots](#Screenshots)
-2. [Installation and Setup](#Installation-and-Setup)
+2. [Installation / Setup / Testing](#Installation-/-Setup-/-Testing)
     1. [Requirements](#Requirements)
-    2. [Local Project Setup](#Local-Project-Setup)
+    2. [Installation](#Installation)
+    3. [Setup](#Setup)
+    4. [Testing](#Testing)
 3. [Roadmap](#Roadmap)
 
 ## Screenshots
@@ -24,26 +25,41 @@ Deployed by [Netlify](https://www.netlify.com/) at [triviaintandem.netlify.app](
 
 -   git
 -   node
--   yarn 1.19.1+
+-   yarn
 
-### Local Project Setup
+### Installation
 
 1. Clone repository
 
-`git clone https://github.com/schang1146/Tandem_Apprentice_Challenge_2020.git`
+**Run `git clone https://github.com/schang1146/Tandem_Apprentice_Challenge_2020.git`**  
+in a directory of your choice
 
 2. Navigate to cloned repository
 3. Install dependencies
 
-`yarn`
+**Run `yarn` or `yarn install`**  
+to start installing all the dependencies the project needs
 
-4. Run local server
+### Setup
 
-`yarn start` -> http://localhost:3000/
+**Run `yarn start`**  
+to start the app in development mode  
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser
+
+Any changes or edits made will reload the page automatically  
+Any lint errors will pop up in the console
 
 ### Testing
 
-`yarn test`
+**Run `yarn test`**  
+to start running unit tests in the interactive watch mode
+
+If terminal outputs **`No failed test found.`**:
+
+-   Press `w` to show more options under **`Watch Usage:`**
+-   Press `f` to quit "only failed tests" mode
+
+and it should automatically rerun all tests
 
 ## Roadmap
 
