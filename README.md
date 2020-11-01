@@ -1,11 +1,11 @@
-# Tandem Apprentice Challenge 2020
+# [Tandem Apprentice Challenge 2020](triviaintandem.netlify.app)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/cc45894e-883f-49e9-908e-b481c1972d96/deploy-status)](https://app.netlify.com/sites/triviaintandem/deploys)
 
 Trivia game implemented with [React](https://reactjs.org/).
 
 Tandem Code Challenge 2020 by [Sammy Chang](https://github.com/schang1146)  
-Deployed by [Netlify](https://www.netlify.com/) at [triviaintandem.netlify.app](triviaintandem.netlify.app)
+Deployed by [Netlify](https://www.netlify.com/)
 
 ## Table of Contents
 
