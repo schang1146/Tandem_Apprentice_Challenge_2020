@@ -10,7 +10,7 @@ Deployed by [Netlify](https://www.netlify.com/) at [triviaintandem.netlify.app](
 ## Table of Contents
 
 1. [Screenshots](#Screenshots)
-2. [Installation / Setup / Testing](#Installation-/-Setup-/-Testing)
+2. [Development Setup](#Development-Setup)
     1. [Requirements](#Requirements)
     2. [Installation](#Installation)
     3. [Setup](#Setup)
@@ -19,7 +19,7 @@ Deployed by [Netlify](https://www.netlify.com/) at [triviaintandem.netlify.app](
 
 ## Screenshots
 
-## Installation / Setup / Testing
+## Development Setup
 
 ### Requirements
 
