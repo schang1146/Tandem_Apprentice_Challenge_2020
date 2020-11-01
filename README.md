@@ -1,72 +1,74 @@
-# Tandem_Apprentice_Challenge_2020
+# [Tandem Apprentice Challenge 2020](https://triviaintandem.netlify.app/)
 
-Tandem Code Challenge 2020
+[![Netlify Status](https://api.netlify.com/api/v1/badges/cc45894e-883f-49e9-908e-b481c1972d96/deploy-status)](https://app.netlify.com/sites/triviaintandem/deploys)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Trivia game implemented with [React](https://reactjs.org/).
 
-## Available Scripts
+Tandem Code Challenge 2020 by [Sammy Chang](https://github.com/schang1146)  
+Deployed by [Netlify](https://www.netlify.com/)
 
-In the project directory, you can run:
+## Table of Contents
 
-### `yarn start`
+1. [Screenshots](#Screenshots)
+2. [Development Setup](#Development-Setup)
+    1. [Requirements](#Requirements)
+    2. [Installation](#Installation)
+    3. [Setup](#Setup)
+    4. [Testing](#Testing)
+3. [Roadmap](#Roadmap)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Screenshots
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![LandingView](./src/assets/LandingView.PNG)  
+![TriviaView](./src/assets/TriviaView.PNG)  
+![ResultView](./src/assets/ResultView.PNG)
 
-### `yarn test`
+## Development Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Requirements
 
-### `yarn build`
+-   [git](https://git-scm.com/downloads)
+-   [node.js](https://nodejs.org/en/download/)
+-   [yarn](https://yarnpkg.com/getting-started/install)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone repository
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Run `git clone https://github.com/schang1146/Tandem_Apprentice_Challenge_2020.git`**  
+in a directory of your choice
 
-### `yarn eject`
+2. Navigate to cloned repository
+3. Install dependencies
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Run `yarn` or `yarn install`**  
+to start installing all the dependencies the project needs
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Run `yarn start`**  
+to start the app in development mode  
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Any changes or edits made will reload the page automatically  
+Any lint errors will pop up in the console
 
-## Learn More
+### Testing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Run `yarn test`**  
+to start running unit tests in the interactive watch mode
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+If terminal outputs **`No failed test found.`**:
 
-### Code Splitting
+-   Press `w` to show more options under **`Watch Usage:`**
+-   Press `f` to quit "only failed tests" mode
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+and it should automatically rerun all tests
 
-### Analyzing the Bundle Size
+## Roadmap
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-   [ ] add history of personal progression (store in cookie or localStorage)
+-   [ ] add share feature to post result to social media accounts
+-   [ ] add more styling to make pages less bland
+-   [ ] make pages responsive to support mobile play
+-   [ ] add hidden easter eggs because who doesn't love some easter eggs? :)
