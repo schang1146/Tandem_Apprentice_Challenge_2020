@@ -1,0 +1,13 @@
+@use '../../assets/colors';
+
+.footer-wrapper {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+
+    color: gray;
+
+    a {
+        color: gray;
+    }
+}

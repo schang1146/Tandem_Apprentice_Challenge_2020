@@ -5,6 +5,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // import styling
 import './App.scss';
 
+// import components
+import Footer from '../Footer/Footer';
+
 // import views
 const LandingView = lazy(() => import('../../views/LandingView/LandingView'));
 const TriviaView = lazy(() => import('../../views/TriviaView/TriviaView'));
@@ -20,6 +23,7 @@ function App() {
                     <Route path='/result' component={ResultView} />
                 </Switch>
             </Suspense>
+            <Footer />
         </Router>
     );
 }
