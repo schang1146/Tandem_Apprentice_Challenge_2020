@@ -19,13 +19,17 @@ Deployed by [Netlify](https://www.netlify.com/)
 
 ## Screenshots
 
+![LandingView](./src/assets/LandingView.PNG)  
+![TriviaView](./src/assets/TriviaView.PNG)  
+![ResultView](./src/assets/ResultView.PNG)
+
 ## Development Setup
 
 ### Requirements
 
--   git
--   node
--   yarn
+-   [git](https://git-scm.com/downloads)
+-   [node.js](https://nodejs.org/en/download/)
+-   [yarn](https://yarnpkg.com/getting-started/install)
 
 ### Installation
 
