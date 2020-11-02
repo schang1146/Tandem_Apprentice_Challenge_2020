@@ -69,6 +69,7 @@ and it should automatically rerun all tests
 
 -   [ ] add history of personal progression (store in cookie or localStorage)
 -   [ ] add share feature to post result to social media accounts
--   [ ] add more styling to make pages less bland
+-   [ ] add more styling/objects to make pages less bland
 -   [ ] make pages responsive to support mobile play
 -   [ ] add hidden easter eggs because who doesn't love some easter eggs? :)
+-   [ ] add more text in landing page to scroll and replace "Build your Trivia muscles!"

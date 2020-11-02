@@ -32,7 +32,10 @@ const getRandomInt = (max) => {
 };
 
 // function to shuffle a given array
-// uses durstenfeld's shuffling algorithm
+/** uses durstenfeld's shuffling algorithm
+ *  time complexity - O(n)
+ *  only has to loop over array once making random swaps
+ */
 const shuffle = (array) => {
     for (let i = 0; i < array.length - 1; i++) {
         const j = Math.floor(Math.random() * array.length);
@@ -41,23 +44,30 @@ const shuffle = (array) => {
     return array;
 };
 
+// functional component for playing trivia
+/** Went with this approach because if they try to reload after getting a problem wrong
+ *  it'll reset their entire progress
+ */
 function TriviaView() {
-    // componentdidmount - generate questions
     const [problems, setProblems] = useState([]);
-    useEffect(() => {
-        const generatedProblems = generateProblems;
-        setProblems(generatedProblems);
-    }, []);
     const [score, setScore] = useState(0);
     const [questionId, setQuestionId] = useState(0);
     const [selected, setSelected] = useState(null);
     const [isSubmitted, setSubmitted] = useState(false);
 
+    // componentdidmount - generate questions
+    useEffect(() => {
+        const generatedProblems = generateProblems;
+        setProblems(generatedProblems);
+    }, []);
+
     const history = useHistory();
+    // function to render next question for user or ResultView if user is on last question
     const next = (e) => {
         e.preventDefault();
 
         if (questionId === 9) {
+            // passes ResultView the score they got
             history.push({
                 pathname: '/result',
                 state: { score: score },
@@ -69,7 +79,7 @@ function TriviaView() {
         setSubmitted(false);
         setSelected(null);
     };
-
+    // function to submit question and check if user got the right answer
     const submit = (e) => {
         e.preventDefault();
 
@@ -82,7 +92,7 @@ function TriviaView() {
 
     return (
         <div className='trivia-wrapper'>
-            {problems.length ? (
+            {problems.length ? ( // handles on page load, and there's no problems to display yet
                 <form className='trivia-form' onSubmit={(e) => submit(e)}>
                     <div className='trivia-score'>Score: {score}/10</div>
                     <div className='trivia-problem'>Problem #{questionId + 1}</div>
@@ -92,9 +102,14 @@ function TriviaView() {
                             {problems[questionId].answers.map((answer, index) => {
                                 return (
                                     <li
-                                        className={`trivia-option ${!isSubmitted && selected === index ? 'selected' : ''} ${isSubmitted && problems[questionId].answers.indexOf(problems[questionId].correct) === index ? 'correct' : ''} ${isSubmitted && index === selected && problems[questionId].answers.indexOf(problems[questionId].correct) !== selected ? 'incorrect' : ''}`}
+                                        // depending on state, will show correct/incorrect answers if needed
+                                        className={`trivia-option
+                                            ${!isSubmitted && selected === index ? 'selected' : ''}
+                                            ${isSubmitted && problems[questionId].answers.indexOf(problems[questionId].correct) === index ? 'correct' : ''}
+                                            ${isSubmitted && index === selected && problems[questionId].answers.indexOf(problems[questionId].correct) !== selected ? 'incorrect' : ''}`}
                                         key={index}
                                         onClick={() => {
+                                            // prevent users from selecting another answer if they already submitted
                                             if (!isSubmitted) {
                                                 setSelected(index);
                                             }
