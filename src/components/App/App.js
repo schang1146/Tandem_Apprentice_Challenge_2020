@@ -9,6 +9,7 @@ import Footer from '../Footer/Footer';
 const LandingView = lazy(() => import('../../views/LandingView/LandingView'));
 const TriviaView = lazy(() => import('../../views/TriviaView/TriviaView'));
 const ResultView = lazy(() => import('../../views/ResultView/ResultView'));
+const AuthView = lazy(() => import('../../views/AuthView/AuthView'));
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                     <Route exact path='/' component={LandingView} />
                     <Route path='/trivia' component={TriviaView} />
                     <Route path='/result' component={ResultView} />
+                    <Route path='/auth' component={AuthView} />
                 </Switch>
             </Suspense>
             <Footer />
