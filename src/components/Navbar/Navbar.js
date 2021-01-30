@@ -4,15 +4,11 @@ import { Link } from 'react-router-dom';
 import 'firebase/auth';
 import firebaseApp from '../../firebase';
 
-// import components
-import AuthModal from '../AuthModal/AuthModal';
-
 // import styling
 import './Navbar.scss';
 
-function Navbar() {
+function Navbar({ toggleAuthModal }) {
     const [isLoggedIn, setIsLoggedIn] = useState(null);
-    const [isAuthModalVisible, setIsAuthModalVisible] = useState(false);
 
     firebaseApp.auth().onAuthStateChanged(function (firebaseUser) {
         if (firebaseUser) {
@@ -26,10 +22,6 @@ function Navbar() {
         firebaseApp.auth().signOut();
     };
 
-    const toggleAuthModal = () => {
-        setIsAuthModalVisible(true);
-    };
-
     return (
         <div className='navbar-wrapper'>
             <div className='navbar-left'>
@@ -38,12 +30,15 @@ function Navbar() {
                 <Link to='/leaderboards'>Leaderboards</Link>
             </div>
             <div className='navbar-right'>
+                <span style={{ marginRight: '2rem' }}>
+                    {firebaseApp.auth().currentUser !== null &&
+                        firebaseApp.auth().currentUser.displayName}
+                </span>
                 {isLoggedIn ? (
                     <button onClick={logout}>Logout</button>
                 ) : (
                     <button onClick={toggleAuthModal}>Login</button>
                 )}
-                {isAuthModalVisible && <AuthModal />}
             </div>
         </div>
     );
