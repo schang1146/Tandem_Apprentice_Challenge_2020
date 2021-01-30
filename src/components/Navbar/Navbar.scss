@@ -1,0 +1,13 @@
+@use '../../assets/styling/colors';
+
+.navbar-wrapper {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+
+    color: gray;
+
+    a {
+        color: gray;
+    }
+}

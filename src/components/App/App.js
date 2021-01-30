@@ -3,6 +3,7 @@ import { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // import components
+import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 
 // import views
@@ -14,6 +15,7 @@ const AuthView = lazy(() => import('../../views/AuthView/AuthView'));
 function App() {
     return (
         <Router>
+            <Navbar />
             <Suspense fallback={<div>Loading...</div>}>
                 <Switch>
                     <Route exact path='/' component={LandingView} />
