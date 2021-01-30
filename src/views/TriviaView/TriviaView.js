@@ -2,6 +2,9 @@
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router';
 
+// import components
+import Layout from '../../components/Layout/Layout';
+
 // import styling
 import './TriviaView.scss';
 
@@ -91,50 +94,71 @@ function TriviaView() {
     };
 
     return (
-        <div className='trivia-wrapper'>
-            {problems.length ? ( // handles on page load, and there's no problems to display yet
-                <form className='trivia-form' onSubmit={(e) => submit(e)}>
-                    <div className='trivia-score'>Score: {score}/10</div>
-                    <div className='trivia-problem'>Problem #{questionId + 1}</div>
-                    <div className='trivia-question'>{problems[questionId].question}</div>
-                    <div className='trivia-answers'>
-                        <ol type='A'>
-                            {problems[questionId].answers.map((answer, index) => {
-                                return (
-                                    <li
-                                        // depending on state, will show correct/incorrect answers if needed
-                                        className={`trivia-option
+        <Layout style={{ background: 'linear-gradient(to bottom, #e4f2e4 80%, #ffffff 20%)' }}>
+            <div className='trivia-wrapper'>
+                {problems.length ? ( // handles on page load, and there's no problems to display yet
+                    <form className='trivia-form' onSubmit={(e) => submit(e)}>
+                        <div className='trivia-score'>Score: {score}/10</div>
+                        <div className='trivia-problem'>Problem #{questionId + 1}</div>
+                        <div className='trivia-question'>{problems[questionId].question}</div>
+                        <div className='trivia-answers'>
+                            <ol type='A'>
+                                {problems[questionId].answers.map((answer, index) => {
+                                    return (
+                                        <li
+                                            // depending on state, will show correct/incorrect answers if needed
+                                            className={`trivia-option
                                             ${!isSubmitted && selected === index ? 'selected' : ''}
-                                            ${isSubmitted && problems[questionId].answers.indexOf(problems[questionId].correct) === index ? 'correct' : ''}
-                                            ${isSubmitted && index === selected && problems[questionId].answers.indexOf(problems[questionId].correct) !== selected ? 'incorrect' : ''}`}
-                                        key={index}
-                                        onClick={() => {
-                                            // prevent users from selecting another answer if they already submitted
-                                            if (!isSubmitted) {
-                                                setSelected(index);
+                                            ${
+                                                isSubmitted &&
+                                                problems[questionId].answers.indexOf(
+                                                    problems[questionId].correct
+                                                ) === index
+                                                    ? 'correct'
+                                                    : ''
                                             }
-                                        }}
-                                    >
-                                        {index + 1}. {answer}
-                                    </li>
-                                );
-                            })}
-                        </ol>
-                    </div>
-                    {!isSubmitted ? (
-                        <button className='btn btn-submit' type='submit' disabled={selected === null ? true : false}>
-                            Submit
-                        </button>
-                    ) : (
-                        <button className='btn btn-next' onClick={(e) => next(e)}>
-                            Next
-                        </button>
-                    )}
-                </form>
-            ) : (
-                <div>Loading...</div>
-            )}
-        </div>
+                                            ${
+                                                isSubmitted &&
+                                                index === selected &&
+                                                problems[questionId].answers.indexOf(
+                                                    problems[questionId].correct
+                                                ) !== selected
+                                                    ? 'incorrect'
+                                                    : ''
+                                            }`}
+                                            key={index}
+                                            onClick={() => {
+                                                // prevent users from selecting another answer if they already submitted
+                                                if (!isSubmitted) {
+                                                    setSelected(index);
+                                                }
+                                            }}
+                                        >
+                                            {index + 1}. {answer}
+                                        </li>
+                                    );
+                                })}
+                            </ol>
+                        </div>
+                        {!isSubmitted ? (
+                            <button
+                                className='btn btn-submit'
+                                type='submit'
+                                disabled={selected === null ? true : false}
+                            >
+                                Submit
+                            </button>
+                        ) : (
+                            <button className='btn btn-next' onClick={(e) => next(e)}>
+                                Next
+                            </button>
+                        )}
+                    </form>
+                ) : (
+                    <div>Loading...</div>
+                )}
+            </div>
+        </Layout>
     );
 }
 
