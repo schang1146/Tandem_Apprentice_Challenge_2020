@@ -1,10 +1,12 @@
+import Modal from 'react-bootstrap/Modal';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import firebaseApp from '../../firebase';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
-import './AuthModal.scss';
+import './AuthModal.module.scss';
 
+// const ui = new firebaseui.auth.AuthUI(firebaseApp.auth());
 const uiConfig = {
     // popup signin flow rather than redirect flow
     signInFlow: 'popup',
@@ -18,11 +20,16 @@ const uiConfig = {
     ],
 };
 
-function AuthModal() {
+function AuthModal({ isAuthModalVisible, closeAuthModal }) {
     return (
-        <div className='authmodal-wrapper'>
-            <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebaseApp.auth()} />
-        </div>
+        <Modal show={isAuthModalVisible} onHide={closeAuthModal}>
+            <Modal.Header closeButton>
+                <Modal.Title>Log In</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                {<StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebaseApp.auth()} />}
+            </Modal.Body>
+        </Modal>
     );
 }
 
