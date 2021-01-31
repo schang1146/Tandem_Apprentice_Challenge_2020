@@ -22,7 +22,7 @@ const uiConfig = {
 
 function AuthModal({ isAuthModalVisible, closeAuthModal }) {
     return (
-        <Modal show={isAuthModalVisible} onHide={closeAuthModal}>
+        <Modal show={isAuthModalVisible} onHide={closeAuthModal} className='authmodal-wrapper'>
             <Modal.Header closeButton>
                 <Modal.Title>Log In</Modal.Title>
             </Modal.Header>
