@@ -2,6 +2,9 @@
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 
+// import components
+import Layout from '../../components/Layout/Layout';
+
 // import styling
 import './ResultView.scss';
 
@@ -23,16 +26,21 @@ function ResultView() {
         11: 'Cheater!',
     };
     return (
-        <div className='result-wrapper'>
-            <h2 className='result-score'>You scored {history.location.state.score}/10!</h2>
-            <h3 className='result-title'>Title: {titles[history.location.state.score]}</h3>
-            <Link className='btn-retry' to='/trivia'>
-                Retry
-            </Link>
-            <Link className='btn-home' to='/'>
-                Back to Home
-            </Link>
-        </div>
+        <Layout style={{ background: `linear-gradient(to bottom, #ffd4c0 80%, #ffffff 20%)` }}>
+            <div className='result-wrapper'>
+                <h2 className='result-score'>You scored {history.location.state.score}/10!</h2>
+                <h3 className='result-title'>Title: {titles[history.location.state.score]}</h3>
+                <Link className='btn-retry' to='/trivia'>
+                    Retry
+                </Link>
+                <Link className='btn-home' to='/'>
+                    Back to Home
+                </Link>
+                <Link className='btn-home' to='/leaderboards'>
+                    Leaderboards
+                </Link>
+            </div>
+        </Layout>
     );
 }
 

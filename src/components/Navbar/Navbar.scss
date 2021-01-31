@@ -1,13 +1,46 @@
 @use '../../assets/styling/colors';
 
 .navbar-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 80%;
     position: absolute;
-    right: 2rem;
-    top: 2rem;
+    top: 10%;
+    left: 10%;
 
     color: gray;
 
+    .navbar-left {
+        position: relative;
+
+        a {
+            margin-left: 3rem;
+        }
+
+        :first-child {
+            margin-left: 0;
+        }
+    }
+
+    .navbar-right {
+        position: relative;
+    }
+
     a {
         color: gray;
+    }
+
+    button {
+        border: none;
+        padding: 2rem 5rem;
+        color: colors.$btn2-color;
+        background-color: colors.$btn2-border-color;
+        outline: none;
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
