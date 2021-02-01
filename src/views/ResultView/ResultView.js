@@ -32,17 +32,19 @@ function ResultView() {
 
     useEffect(() => {
         if (history.location.state && history.location.state.score) {
-            const newScore = {
-                name: firebaseApp.auth().currentUser.displayName,
-                score: history.location.state.score,
-                timestamp: new Date().getTime(),
-                uid: firebaseApp.auth().currentUser.uid,
-            };
-            const newScoreKey = firebaseApp.database().ref().child('scores').push().key;
-            let updates = {};
-            updates['/scores/' + newScoreKey] = newScore;
+            if (firebaseApp.auth().currentUser !== null) {
+                const newScore = {
+                    name: firebaseApp.auth().currentUser.displayName,
+                    score: history.location.state.score,
+                    timestamp: new Date().getTime(),
+                    uid: firebaseApp.auth().currentUser.uid,
+                };
+                const newScoreKey = firebaseApp.database().ref().child('scores').push().key;
+                let updates = {};
+                updates['/scores/' + newScoreKey] = newScore;
 
-            return firebaseApp.database().ref().update(updates);
+                return firebaseApp.database().ref().update(updates);
+            }
         }
     });
 
