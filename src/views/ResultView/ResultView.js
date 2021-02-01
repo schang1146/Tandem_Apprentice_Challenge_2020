@@ -13,7 +13,6 @@ import Layout from '../../components/Layout/Layout';
 import './ResultView.scss';
 
 const db = firebaseApp.database();
-const scoresRef = db.ref('scores');
 
 function ResultView() {
     const history = useHistory();
