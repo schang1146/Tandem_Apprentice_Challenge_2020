@@ -40,7 +40,7 @@ function Navbar() {
                 <div className='navbar-right'>
                     <span style={{ marginRight: '2rem' }}>
                         {firebaseApp.auth().currentUser !== null &&
-                            firebaseApp.auth().currentUser.displayName}
+                            `Signed in as ${firebaseApp.auth().currentUser.displayName}`}
                     </span>
                     {isLoggedIn ? (
                         <button onClick={logout}>Logout</button>

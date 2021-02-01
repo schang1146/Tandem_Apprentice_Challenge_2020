@@ -10,6 +10,7 @@ import Footer from '../Footer/Footer';
 const LandingView = lazy(() => import('../../views/LandingView/LandingView'));
 const TriviaView = lazy(() => import('../../views/TriviaView/TriviaView'));
 const ResultView = lazy(() => import('../../views/ResultView/ResultView'));
+const LeaderboardsView = lazy(() => import('../../views/LeaderboardsView/LeaderboardsView'));
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                     <Route exact path='/' component={LandingView} />
                     <Route path='/trivia' component={TriviaView} />
                     <Route path='/result' component={ResultView} />
+                    <Route path='/leaderboards' component={LeaderboardsView} />
                 </Switch>
                 <Footer />
             </Suspense>
