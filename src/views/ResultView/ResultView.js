@@ -12,8 +12,6 @@ import Layout from '../../components/Layout/Layout';
 // import styling
 import './ResultView.scss';
 
-const db = firebaseApp.database();
-
 function ResultView() {
     const history = useHistory();
     const titles = {
